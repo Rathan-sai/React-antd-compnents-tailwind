@@ -1,7 +1,7 @@
 import { Button, ConfigProvider, theme } from "antd";
 import React, { useState } from "react";
 import "./App.css";
-import Language from "./Components/Language";
+import Buttons from "./Components/Buttons/Buttons";
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -16,6 +16,7 @@ function App() {
       theme={{
         token: {
           colorTextPlaceholder: isDarkMode ? "#ffffff" : "#000000",
+          fontSize: "18px",
         },
         algorithm: isDarkMode ? theme.darkAlgorithm : theme.defaultAlgorithm,
       }}
@@ -24,7 +25,8 @@ function App() {
         className="app"
         style={{ backgroundColor: isDarkMode ? "#333" : "#ffffff" }}
       >
-        <Language />
+        {/* <Language /> */}
+        <Buttons />
         <div
           style={{
             position: "absolute",
