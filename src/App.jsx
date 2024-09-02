@@ -1,35 +1,45 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { Button, ConfigProvider, theme } from "antd";
+import React, { useState } from "react";
+import "./App.css";
+import Language from "./Components/Language";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [isDarkMode, setIsDarkMode] = useState(false);
+  const { token } = theme.useToken();
+
+  const toggleTheme = () => {
+    setIsDarkMode((prevMode) => !prevMode);
+  };
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <ConfigProvider
+      theme={{
+        token: {
+          colorTextPlaceholder: isDarkMode ? "#ffffff" : "#000000",
+        },
+        algorithm: isDarkMode ? theme.darkAlgorithm : theme.defaultAlgorithm,
+      }}
+    >
+      <div
+        className="app"
+        style={{ backgroundColor: isDarkMode ? "#333" : "#ffffff" }}
+      >
+        <Language />
+        <div
+          style={{
+            position: "absolute",
+            display: "flex",
+            top: 10,
+            right: 10,
+          }}
+        >
+          <Button onClick={toggleTheme}>
+            {isDarkMode ? "Switch to Light Theme" : "Switch to Dark Theme"}
+          </Button>
+        </div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    </ConfigProvider>
+  );
 }
 
-export default App
+export default App;
