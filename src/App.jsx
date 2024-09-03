@@ -1,7 +1,8 @@
 import { Button, ConfigProvider, theme } from "antd";
 import React, { useState } from "react";
 import "./App.css";
-import Buttons from "./Components/Buttons/Buttons";
+import ResponsiveGridLayout from "./Components/Grids/ResponsiveGridLayout";
+import TwoColumnLayout from "./Components/Grids/TwoColumnLayout";
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -26,7 +27,9 @@ function App() {
         style={{ backgroundColor: isDarkMode ? "#333" : "#ffffff" }}
       >
         {/* <Language /> */}
-        <Buttons />
+        {/* <Buttons /> */}
+        <TwoColumnLayout />
+        <ResponsiveGridLayout />
         <div
           style={{
             position: "absolute",
