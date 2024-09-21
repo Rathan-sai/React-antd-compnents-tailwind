@@ -1,8 +1,7 @@
 import { Button, ConfigProvider, theme } from "antd";
 import React, { useState } from "react";
 import "./App.css";
-import ResponsiveGridLayout from "./Components/Grids/ResponsiveGridLayout";
-import TwoColumnLayout from "./Components/Grids/TwoColumnLayout";
+import PaymentGateway from "./Components/PaymentGateway/PaymentGateway";
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -28,8 +27,9 @@ function App() {
       >
         {/* <Language /> */}
         {/* <Buttons /> */}
-        <TwoColumnLayout />
-        <ResponsiveGridLayout />
+        {/* <TwoColumnLayout /> */}
+        {/* <ResponsiveGridLayout /> */}
+        <PaymentGateway />
         <div
           style={{
             position: "absolute",
