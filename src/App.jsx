@@ -1,7 +1,7 @@
 import { Button, ConfigProvider, theme } from "antd";
 import React, { useState } from "react";
 import "./App.css";
-import PaymentGateway from "./Components/PaymentGateway/PaymentGateway";
+import Language from "./Components/Language";
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -25,11 +25,11 @@ function App() {
         className="app"
         style={{ backgroundColor: isDarkMode ? "#333" : "#ffffff" }}
       >
-        {/* <Language /> */}
+        <Language />
         {/* <Buttons /> */}
         {/* <TwoColumnLayout /> */}
         {/* <ResponsiveGridLayout /> */}
-        <PaymentGateway />
+        {/* <PaymentGateway /> */}
         <div
           style={{
             position: "absolute",

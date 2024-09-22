@@ -63,6 +63,7 @@ const Language = () => {
           display: "Flex",
           flexWrap: "wrap",
           justifyContent: "center",
+          position: "relative",
         }}
         size={20}
       >
@@ -77,21 +78,6 @@ const Language = () => {
         <Button type="primary" style={{ width: 220 }}>
           Custom Themed Button
         </Button>
-        <Button type="primary" style={{ width: 220 }}>
-          Custom Themed Button
-        </Button>
-        <Button type="primary" style={{ width: 220 }}>
-          Custom Themed Button
-        </Button>
-        <Button type="primary" style={{ width: 220 }}>
-          Custom Themed Button
-        </Button>
-        <Button type="primary" style={{ width: 220 }}>
-          Custom Themed Button
-        </Button>
-        <Button type="primary" style={{ width: 220 }}>
-          Custom Themed Button
-        </Button>
         <Typography>
           <Title level={2}>This is a Title</Title>
           <Paragraph>
@@ -101,6 +87,26 @@ const Language = () => {
           </Paragraph>
         </Typography>
       </Space>
+      <div
+        style={{
+          width: "100vw",
+          height: "100vh",
+          backgroundColor: "red",
+          position: "absolute",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <div
+          style={{
+            width: "80vw",
+            height: "80vh",
+            backgroundColor: "black",
+            position: "relative",
+          }}
+        ></div>
+      </div>
     </ConfigProvider>
   );
 };
